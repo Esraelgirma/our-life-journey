@@ -10,24 +10,98 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Poppins', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Poppins', 'Noto Sans Ethiopic', sans-serif; }
+        
+        /* Custom Scrollbar for a cleaner look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #1e3a8a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
     </style>
 </head>
-<body class="bg-black text-white min-h-screen flex flex-col justify-between">
+<body class="bg-black text-white min-h-screen flex flex-col justify-between selection:bg-pink-500 selection:text-white">
 
-    <!-- LANDING PAGE SECTION -->
-    <div id="landingPage" class="flex flex-col items-center justify-center min-h-screen px-6 text-center bg-gradient-to-b from-blue-950 via-black to-black">
-        <div class="max-w-md mx-auto space-y-6">
-            <div class="w-20 h-20 bg-pink-500 rounded-full flex items-center justify-center mx-auto shadow-lg shadow-pink-500/30 animate-pulse">
-                <i class="fa-solid fa-heart text-3xl text-white"></i>
+    <!-- SCROLLABLE LANDING PAGE SECTION -->
+    <div id="landingPage" class="flex flex-col bg-gradient-to-b from-blue-950 via-black to-black">
+        
+        <!-- Hero Section (Top Part) -->
+        <div class="min-h-screen flex flex-col items-center justify-center px-6 text-center relative">
+            <div class="max-w-xl mx-auto space-y-8">
+                <!-- Glowing Heart Icon -->
+                <div class="w-24 h-24 bg-pink-600 rounded-full flex items-center justify-center mx-auto shadow-[0_0_40px_rgba(219,39,119,0.5)] animate-pulse">
+                    <i class="fa-solid fa-heart text-4xl text-white"></i>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-500">
+                    የህይወት ጉዟችን
+                </h1>
+                
+                <p class="text-gray-300 text-base md:text-lg leading-relaxed font-light">
+                    የተለመደውን የካፌ ውሎ ትተን፤ የሰውን ልጅ ህይወት፣ እምነት፣ ተፈጥሮ እና እውነተኛውን ማህበራዊ ኑሮ በጥልቀት የምንቃኝበት <span class="text-pink-400 font-semibold">የ 60 ቀናት ልዩ ምዕራፍ።</span>
+                </p>
             </div>
-            <h1 class="text-3xl md:text-4xl font-bold tracking-wide text-blue-400">የህይወት ጉዟችን</h1>
-            <p class="text-gray-300 text-sm md:text-base leading-relaxed">
-                የተለመደውን የካፌ ውሎ ትተን፤ የሰውን ልጅ ህይወት፣ እምነት፣ ተፈጥሮ እና እውነተኛውን ማህበራዊ ኑሮ በአንድነት የምንቃኝበት የ 60 ቀናት ልዩ ምዕራፍ።
-            </p>
-            <button onclick="startJourney()" class="w-full py-4 bg-pink-600 hover:bg-pink-500 text-white font-semibold rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105">
-                ጉዞአችንን ጀምር ✨
-            </button>
+
+            <!-- Scroll Down Indicator -->
+            <div class="absolute bottom-10 animate-bounce text-gray-500 flex flex-col items-center">
+                <span class="text-xs mb-2 tracking-widest uppercase">ወደ ታች እይ</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </div>
+
+        <!-- Features/Cards Section (Scroll Down Part) -->
+        <div class="max-w-4xl mx-auto px-6 py-16 w-full space-y-12">
+            <div class="text-center space-y-3">
+                <h2 class="text-2xl md:text-3xl font-bold text-blue-300">በእነዚህ 60 ቀናት ምን እናደርጋለን?</h2>
+                <div class="h-1 w-20 bg-pink-600 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-blue-900/20 border border-blue-800/50 p-6 rounded-2xl hover:bg-blue-900/40 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-950 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">ማህበራዊ መተሳሰብ</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">ከእኛ አልፈን የሌሎችን ህይወት የምናስተውልበት፣ ለተቸገሩት አቅማችን በፈቀደ የምንደርስበት እና እውነተኛውን ኑሮ የምንማርበት።</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-blue-900/20 border border-blue-800/50 p-6 rounded-2xl hover:bg-blue-900/40 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-950 text-pink-400 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">የጋራ ራዕይ እና ቴክኖሎጂ</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">እንደ ሶፍትዌር ባለሙያነታችን አብረን ኮድ የምናደርግበት፣ የነገ ህልማችንን የምንቀርጽበት እና ሙያዊ ክህሎታችንን የምናሳድግበት።</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-blue-900/20 border border-blue-800/50 p-6 rounded-2xl hover:bg-blue-900/40 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-950 text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                        <i class="fa-solid fa-dove"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">እምነት እና ሰላም</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">ከከተማው ጫጫታ ርቀን ጸጥታን የምናዳምጥበት፣ መንፈሳዊነታችንን የምናጠነክርበት እና ለፈጣሪ ምስጋና የምናቀርብበት።</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-blue-900/20 border border-blue-800/50 p-6 rounded-2xl hover:bg-blue-900/40 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-blue-950 text-amber-400 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">ተፈጥሮ እና ነጻነት</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">ረጅም የእግር ጉዞዎችን የምናደርግበት፣ በትንሽ በጀት ደስታን የምንፈጥርበት እና አዳዲስ ቦታዎችን በነጻነት የምናስስበት።</p>
+                </div>
+            </div>
+
+            <!-- Start Action Area -->
+            <div class="pt-10 pb-20 text-center max-w-sm mx-auto">
+                <p class="text-gray-300 text-sm mb-6">ህይወትን ሙሉ ለሙሉ በተለየ መንገድ ለማየት ዝግጁ ነሽ?</p>
+                <button onclick="startJourney()" class="w-full py-4 bg-pink-600 hover:bg-pink-500 text-white font-bold rounded-2xl shadow-[0_10px_20px_rgba(219,39,119,0.3)] transition-all duration-300 transform hover:-translate-y-1">
+                    ጉዞአችንን ጀምር ✨
+                </button>
+            </div>
         </div>
     </div>
 
@@ -35,38 +109,38 @@
     <div id="mainApp" class="hidden flex-col min-h-screen bg-black text-white">
         <!-- Header -->
         <header class="py-6 px-4 bg-blue-950/40 border-b border-blue-900/50 text-center sticky top-0 z-10 backdrop-blur-md">
-            <h2 class="text-xl md:text-2xl font-bold text-blue-400">የ 60 ቀናት የህይወት ጉዞ እቅድ</h2>
-            <p class="text-xs text-gray-400 mt-1">ቀኑን ሲነኩ የዕለቱን ሀሳብ ያገኛሉ (በቀን 1 ብቻ)</p>
+            <h2 class="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-500">የ 60 ቀናት እቅዳችን</h2>
+            <p class="text-xs text-gray-400 mt-1">ቀኑን ስትነኪ የዕለቱን ሀሳብ ታገኛለሽ (በቀን 1 ብቻ)</p>
         </header>
 
         <!-- Grid Container -->
-        <main class="flex-1 max-w-4xl w-full mx-auto p-4 md:p-6">
+        <main class="flex-1 max-w-4xl w-full mx-auto p-4 md:p-6 pb-12">
             <div id="gridContainer" class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-3 md:gap-4">
                 <!-- Buttons will be injected dynamically via JavaScript -->
             </div>
         </main>
 
         <!-- Footer -->
-        <footer class="py-4 text-center text-xs text-gray-500 border-t border-gray-900">
-            Created with ❤️ for Us
+        <footer class="py-4 text-center text-xs text-gray-600 border-t border-gray-900 bg-black">
+            Created with <i class="fa-solid fa-heart text-pink-600 mx-1"></i> for Us
         </footer>
     </div>
 
     <!-- MODAL POPUP -->
-    <div id="modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
-        <div class="bg-blue-950 border border-blue-800 rounded-2xl max-w-md w-full p-6 text-center space-y-4 shadow-2xl relative">
-            <div id="modalIcon" class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center mx-auto text-white text-xl">
+    <div id="modal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 z-50">
+        <div class="bg-blue-950 border border-blue-800 rounded-3xl max-w-md w-full p-6 text-center space-y-4 shadow-2xl relative">
+            <div id="modalIcon" class="w-14 h-14 bg-pink-600 rounded-full flex items-center justify-center mx-auto text-white text-2xl shadow-lg">
                 <i class="fa-solid fa-star"></i>
             </div>
-            <h3 id="modalTitle" class="text-lg font-bold text-blue-300">ቀን 1</h3>
-            <p id="modalText" class="text-gray-200 text-sm leading-relaxed"></p>
-            <button onclick="closeModal()" class="w-full py-3 bg-pink-600 hover:bg-pink-500 text-white font-medium rounded-xl transition-all">
-                እሺ (ተረድቻለሁ)
+            <h3 id="modalTitle" class="text-xl font-bold text-blue-300">ቀን 1</h3>
+            <p id="modalText" class="text-gray-200 text-sm leading-relaxed py-2"></p>
+            <button onclick="closeModal()" class="w-full py-3.5 bg-pink-600 hover:bg-pink-500 text-white font-semibold rounded-2xl transition-all shadow-md">
+                እሺ (ተረድቻለሁ) 🤍
             </button>
         </div>
     </div>
 
-    <!-- JavaScript Link -->
+    <!-- JavaScript Link (Updated to yodi.js) -->
     <script src="yodi.js"></script>
 </body>
 </html>
